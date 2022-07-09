@@ -1,0 +1,20 @@
+@use "./palette";
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row-wrap {
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@mixin flex-column-nowrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}

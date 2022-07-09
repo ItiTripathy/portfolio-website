@@ -1,3 +1,8 @@
+@use "./partials/palette";
+@use "./partials/typography";
+@use "./partials/mixin";
+@use "./partials/devices";
+
 * {
     padding: 0;
     margin: 0;
@@ -6,32 +11,28 @@
 //color contrast checker
 
 body {
-    background-color: #ff8c8c;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    background-color: palette.$primary-bg-color;
+    font-family: typography.$primary-font;
 }
 
 .content-home {
-    background-color: #ff8c8c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: palette.$primary-bg-color;
+    @include mixin.flex-center;
     padding-top: 20px;
 
     &__container {
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-family: typography.$primary-font;
         font-size: 3rem;
         padding: 5px;
         font-weight: bolder;
         font-style: italic;
-        color: purple;
+        color: palette.$primary-font-color;
     }
 }
 
 .navbar {
     margin-bottom: 20px;
-    background-color: #ffc3c3;
+    background-color: palette.$secondary-bg-color;
 
     &__list {
         list-style-type: none;
@@ -43,56 +44,46 @@ body {
 
         &--item {
             &-link {
-                color: purple;
+                color: palette.$primary-font-color;
                 text-decoration: none;
-                font-family: "Lucida Sans", "Lucida Sans Regular",
-                    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
-                    sans-serif;
+                font-family: typography.$primary-font;
             }
         }
     }
 }
 
 .header {
-    display: flex;
+    @include mixin.flex-column-nowrap;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    background-color: #ff8c8c;
+    background-color: palette.$primary-bg-color;
     margin: 5px;
     padding: 20px;
 
     &__title {
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-family: typography.$primary-font;
         font-style: italic;
-        color: purple;
+        color: palette.$primary-font-color;
         padding-bottom: 10px;
     }
 
     &__subtitle {
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-family: typography.$primary-font;
         font-style: italic;
-        color: purple;
+        color: palette.$primary-font-color;
         padding-bottom: 10px;
     }
 }
 
 .content-about {
-    display: flex;
+    @include mixin.flex-row-wrap;
     justify-content: center;
-    flex-direction: row;
     align-content: space-between;
-    flex-wrap: wrap;
-
     margin: 10px;
     padding: 10px;
 
     &__card {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        @include mixin.flex-row-wrap;
         justify-content: center;
 
         &--img {
@@ -105,46 +96,35 @@ body {
         &--text {
             max-width: 360px;
             padding: 10px;
-            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-                "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-
-            color: purple;
+            font-family: typography.$primary-font;
+            color: palette.$primary-font-color;
         }
     }
 }
 
 .content-skills {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include mixin.flex-center;
     border: none;
     margin: 10px;
     padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: purple;
+    font-family: typography.$primary-font;
+    color: palette.$primary-font-color;
 
     font-weight: bold;
 
     &__container {
-        display: flex;
+        @include mixin.flex-row-wrap;
         justify-content: space-evenly;
-        flex-wrap: wrap;
-        flex-direction: row;
 
         &--list {
-            display: flex;
             list-style: none;
+            @include mixin.flex-row-wrap;
             justify-content: space-evenly;
-            flex-direction: row;
-            flex-wrap: wrap;
 
             &-item {
-                //border: 1px solid pink;
                 padding: 15px;
                 margin: 5px;
-                font-family: "Lucida Sans", "Lucida Sans Regular",
-                    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
-                    sans-serif;
+                font-family: typography.$primary-font;
                 font-style: italic;
                 font-size: x-large;
             }
@@ -154,28 +134,23 @@ body {
 
 .content-projects {
     &__group {
-        display: flex;
-        flex-direction: row;
+        @include mixin.flex-row-wrap;
         justify-content: center;
         align-items: flex-start;
-        flex-wrap: wrap;
-        color: purple;
+
+        color: palette.$primary-font-color;
         &--item {
             padding: 20px;
             margin: 10px;
-            display: flex;
+            @include mixin.flex-center;
             flex-direction: row;
-            justify-content: center;
-            align-items: center;
             flex-wrap: nowrap;
             max-width: 500px;
 
             &-title {
-                display: flex;
-                flex-direction: column;
+                @include mixin.flex-column-nowrap;
                 justify-content: flex-start;
                 align-items: center;
-                flex-wrap: nowrap;
             }
             &-thumbnail {
                 width: 200px;
@@ -192,18 +167,14 @@ body {
                 margin-block-end: 1em;
                 margin-inline-start: 0px;
                 margin-inline-end: 0px;
-                font-family: "Lucida Sans", "Lucida Sans Regular",
-                    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
-                    sans-serif;
+                font-family: typography.$primary-font;
                 font-weight: bold;
                 padding-top: 10px;
             }
             &-desc {
                 display: inline;
                 padding: 0 20px;
-                font-family: "Lucida Sans", "Lucida Sans Regular",
-                    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
-                    sans-serif;
+                font-family: typography.$primary-font;
             }
         }
     }
@@ -214,30 +185,26 @@ body {
     bottom: 0;
     width: 100%;
     height: 100px;
-    background-color: #ff5d5d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: palette.$tertiary-bg-color;
+    @include mixin.flex-center;
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 20px 0;
 
     &__links {
-        display: flex;
+        @include mixin.flex-column-nowrap;
         justify-content: space-between;
         align-items: flex-start;
-        flex-direction: column;
-        flex-wrap: nowrap;
         margin: 0px;
         padding: 10px;
 
         &--items {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: typography.$primary-font;
             padding: 2px;
             font-weight: bold;
             text-decoration: none;
             font-size: medium;
-            color: purple;
+            color: palette.$primary-font-color;
         }
     }
 }
