@@ -2,13 +2,12 @@
 @use "./partials/typography";
 @use "./partials/mixin";
 @use "./partials/devices";
+@use "./modules/navbar.scss";
 
 * {
     padding: 0;
     margin: 0;
 }
-
-//color contrast checker
 
 body {
     background-color: palette.$primary-bg-color;
@@ -27,27 +26,10 @@ body {
         font-weight: bolder;
         font-style: italic;
         color: palette.$primary-font-color;
-    }
-}
 
-.navbar {
-    margin-bottom: 20px;
-    background-color: palette.$secondary-bg-color;
-
-    &__list {
-        list-style-type: none;
-        width: 100%;
-        height: 15vh;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-
-        &--item {
-            &-link {
-                color: palette.$primary-font-color;
-                text-decoration: none;
-                font-family: typography.$primary-font;
-            }
+        @include devices.phoneOnly {
+            @include mixin.flex-center;
+            font-size: 2rem;
         }
     }
 }
@@ -58,20 +40,22 @@ body {
     align-items: center;
     background-color: palette.$primary-bg-color;
     margin: 5px;
-    padding: 20px;
+    padding-top: 80px;
+    padding-bottom: 40px;
 
     &__title {
         font-family: typography.$primary-font;
         font-style: italic;
         color: palette.$primary-font-color;
-        padding-bottom: 10px;
+        @include devices.phoneOnly {
+            font-size: x-large;
+        }
     }
 
     &__subtitle {
         font-family: typography.$primary-font;
         font-style: italic;
         color: palette.$primary-font-color;
-        padding-bottom: 10px;
     }
 }
 
@@ -106,13 +90,14 @@ body {
     @include mixin.flex-center;
     border: none;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
+
     font-family: typography.$primary-font;
     color: palette.$primary-font-color;
-
     font-weight: bold;
 
     &__container {
+        flex-direction: column;
         @include mixin.flex-row-wrap;
         justify-content: space-evenly;
 
@@ -127,6 +112,9 @@ body {
                 font-family: typography.$primary-font;
                 font-style: italic;
                 font-size: x-large;
+                @include devices.phoneOnly {
+                    font-size: large;
+                }
             }
         }
     }
@@ -181,15 +169,18 @@ body {
 }
 
 .footer {
-    //position: fixed;
+    position: fixed;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: fit-content;
     background-color: palette.$tertiary-bg-color;
     @include mixin.flex-center;
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 20px 0;
+    @include devices.phoneOnly {
+        position: relative;
+    }
 
     &__links {
         @include mixin.flex-column-nowrap;

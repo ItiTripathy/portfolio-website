@@ -10,34 +10,48 @@
             src="https://kit.fontawesome.com/4cce38de96.js"
             crossorigin="anonymous"
         ></script>
+        <script src="./script.js"></script>
         <title>Itilekha Tripathy | Software Engineer | My Projects</title>
     </head>
     <body>
-        <nav class="navbar">
-            <ul class="navbar__list">
-                <li class="navbar__list--item">
-                    <a class="navbar__list--item-link" href="home.html">Home</a>
-                </li>
-                <li class="navbar__list--item">
-                    <a class="navbar__list--item-link" href="skills.html"
-                        >Skills</a
-                    >
-                </li>
-                <li class="navbar__list--item">
-                    <a class="navbar__list--item-link" href="projects.html"
-                        >Projects</a
-                    >
-                </li>
-                <li class="navbar__list--item">
-                    <a class="navbar__list--item-link" href="about.html"
-                        >About Me</a
-                    >
-                </li>
-            </ul>
+        <nav class="navbar" id="topNav">
+            <h2 class="navbar__logo">i.t.i</h2>
+            <div class="navbar__menu">
+                
+                <div class="navbar__menu--hBtn" onclick="toggleMenu();">
+                    <div class="navbar__menu--hBtn-bar"></div>
+                    <div class="navbar__menu--hBtn-bar"></div>
+                    <div class="navbar__menu--hBtn-bar"></div>
+                </div>
+                
+
+                <ul class="navbar__menu--container">
+                    <li class="navbar__menu--container-item">
+                        <a class="navbar__list--item-link" href="home.html"
+                            >Home</a
+                        >
+                    </li>
+                    <li class="navbar__menu--container-item">
+                        <a class="navbar__list--item-link" href="skills.html"
+                            >Skills</a
+                        >
+                    </li>
+                    <li class="navbar__menu--container-item">
+                        <a class="navbar__list--item-link" href="projects.html"
+                            >Projects</a
+                        >
+                    </li>
+                    <li class="navbar__menu--container-item">
+                        <a class="navbar__list--item-link" href="about.html"
+                            >About Me</a
+                        >
+                    </li>
+                </ul>
+            </div>
         </nav>
 
         <header class="header">
-            <h1 class="header__title">Projects I've Worked On...</h1>
+            <h1 class="header__title">Projects I've Worked On</h1>
         </header>
 
         <main class="content-projects">
@@ -87,7 +101,7 @@
                             />
                         </a>
                         <h3 class="content-projects__group--item-name">
-                            Bookle
+                            Books App
                         </h3>
                     </div>
                     <p class="content-projects__group--item-desc">
@@ -106,7 +120,7 @@
                             />
                         </a>
                         <h3 class="content-projects__group--item-name">
-                            Mock e-Commerce
+                            eShop
                         </h3>
                     </div>
                     <p class="content-projects__group--item-desc">
@@ -119,7 +133,7 @@
             </div>
         </main>
 
-        <footer class="footer">
+        <footer class="footer" style="position: relative">
             <section class="footer__links">
                 <a
                     class="footer__links--items"
