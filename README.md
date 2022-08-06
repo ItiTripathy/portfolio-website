@@ -16,3 +16,7 @@ My portfolio has the information about me, my skills, projects I've worked on an
 ### This webpage has been designed using SCSS and follows the BEM convention and uses a clean color palette.
 
 ### The responsiveness for different media devices is handled by using the media queries.
+
+## Live Image
+
+![TargetImage](./images/live-image.png)
