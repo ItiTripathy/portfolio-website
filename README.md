@@ -57,6 +57,8 @@ My portfolio has the information about me, my skills, projects I've worked on an
 
 ## Known Issues
 
+-   Space gets added to the home page on few of the responsive screens
+
 ## Things I'd differently next time
 
 -   I would redesign the website to be a single page application
