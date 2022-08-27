@@ -84,7 +84,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 50px;
 }
 .content-home__container {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -163,8 +163,9 @@ body {
   justify-content: center;
   align-items: center;
   border: none;
-  margin: 10px;
-  padding: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
+  padding: 40px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: purple;
   font-weight: bold;
@@ -213,6 +214,7 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   max-width: 500px;
+  border: 1px solid purple;
 }
 .content-projects__group--item-title {
   display: flex;
@@ -278,6 +280,6 @@ body {
   padding: 2px;
   font-weight: bold;
   text-decoration: none;
-  font-size: medium;
+  font-size: larger;
   color: purple;
 }
